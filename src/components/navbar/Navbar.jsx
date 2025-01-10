@@ -1,7 +1,11 @@
+"use client"
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
+
+    const pathName = usePathname();
     const links = [
         {
             title : "About",
@@ -21,7 +25,7 @@ const Navbar = () => {
             <Link className='text-xl' href="/">Next Hero</Link>
            <ul className='flex justify-between gap-4'>
             {
-                links.map((link) => <Link key={link.path} href={link.path}>{link.title}</Link>)
+                links.map((link) => <Link className={`${pathName === link.path && "text-black"}`} key={link.path} href={link.path}>{link.title}</Link>)
             }
            </ul>
         </div>
