@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -32,7 +33,7 @@ const page = () => {
               <h2 className="card-title">{blog.title}</h2>
               <p>{blog.content}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Read More</button>
+                <Link href={`/blog/${blog.slug}`} className="btn btn-primary">Read More</Link>
               </div>
             </div>
           </div>
