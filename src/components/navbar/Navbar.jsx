@@ -29,6 +29,9 @@ const Navbar = () => {
     const handleLogin = () =>{
         router.push('/login');
     };
+
+    if(pathName.includes("dashboard"))
+        return(<nav className='bg-green-300'>This is dashboard nav</nav>)
     return (
         <div className='bg-red-500 text-white flex justify-between px-6 py-6'>
             <Link className='text-xl' href="/">Next Hero</Link>
